@@ -5,11 +5,14 @@ const AuthContext = createContext(null)
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(() => {
-    const stored = localStorage.getItem('user')
-    return stored ? JSON.parse(stored) : null
+    try {
+      const stored = localStorage.getItem('user')
+      return stored && stored !== 'undefined' ? JSON.parse(stored) : null
+    } catch {
+      return null
+    }
   })
   const [loading, setLoading] = useState(true)
-
   // Verify token on mount
   useEffect(() => {
     const token = localStorage.getItem('token')
