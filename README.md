@@ -1,4 +1,4 @@
-# TaskFlow – Team Task Manager
+# TaskFlow – Team Task Manager Assignment
 
 A full-stack team task management application built with React, Express.js, and MongoDB.
 
