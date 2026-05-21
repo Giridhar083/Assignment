@@ -6,7 +6,6 @@ A full-stack team task management application built with React, Express.js, and 
 
 - **Frontend:** https://enthusiastic-transformation-project.up.railway.app
 - **Backend:** https://assignment-project.up.railway.app/api/health
-- **GitHub:** https://github.com/Giridhar083/Assignment
 
 ## Tech Stack
 
@@ -197,9 +196,3 @@ Assignment/
 3. **Role stored per-project** — Same user can be Admin in one project and Member in another
 4. **Members can only update status** — Backend enforces this, frontend shows appropriate UI
 5. **Kanban view** — Better UX than a flat list for task tracking
-
----
-
-## Author
-
-**Giridhar** — Built as a full-stack assignment demonstrating React, Express.js, MongoDB, JWT auth, and Railway deployment.
