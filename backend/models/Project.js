@@ -36,10 +36,16 @@ const projectSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+// Helper: get member ID whether populated or not
+const getMemberId = (user) => {
+  if (user && user._id) return user._id.toString();
+  return user.toString();
+};
+
 // Helper: check if user is admin of project
 projectSchema.methods.isAdmin = function (userId) {
   const member = this.members.find(
-    (m) => m.user.toString() === userId.toString()
+    (m) => getMemberId(m.user) === userId.toString()
   );
   return member && member.role === 'admin';
 };
@@ -47,7 +53,7 @@ projectSchema.methods.isAdmin = function (userId) {
 // Helper: check if user is a member
 projectSchema.methods.isMember = function (userId) {
   return this.members.some(
-    (m) => m.user.toString() === userId.toString()
+    (m) => getMemberId(m.user) === userId.toString()
   );
 };
 
